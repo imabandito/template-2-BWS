@@ -1,0 +1,250 @@
+.shop-page {
+  position: relative;
+  margin-top: 96px;
+  @include section-flex-settings();
+}
+
+.container__shop {
+  display: flex;
+  gap: 70px;
+}
+
+.shop__nav {
+  max-width: 266px;
+
+  &__category,
+  &__products,
+  &__colors,
+  &__price {
+    padding-left: 20px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  &__title {
+    color: $color-grey-mid;
+    @include font-bold-big();
+    margin-bottom: 16px;
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__color {
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+
+    &:hover {
+      box-shadow: inset 33px 33px rgba(96, 96, 96, 0.3);
+      cursor: pointer;
+    }
+
+    img {
+      z-index: -1;
+    }
+  }
+
+  &__colors__wrapper {
+    display: flex;
+    gap: 7px;
+  }
+
+  &__range {
+    appearance: none;
+    background: $color-dark-green;
+    height: 6px;
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+  }
+
+  &__range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: $color-white;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid $color-dark-green;
+    cursor: pointer;
+  }
+}
+
+.shop__nav__label {
+  display: flex;
+  gap: 15px;
+
+  @include font-small-medium();
+  color: $color-light-grey;
+
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  background: $color-white;
+  border: 2px solid rgba(217, 217, 217, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  height: 7px;
+  width: 9px;
+  background: url("../images/icons/check.svg");
+}
+
+input[type="checkbox"]:checked {
+  border: none;
+  background: $color-dark-green;
+}
+
+input[type="checkbox"]:hover {
+  cursor: pointer;
+}
+
+.shop__nav__label:hover {
+  color: $color-darker-grey;
+}
+
+input[type="checkbox"]:checked + span {
+  color: $color-dark-green;
+}
+
+.shop {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+
+    margin-top: 50px;
+  }
+
+  &-products {
+    padding-right: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .product {
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    &__sorting {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+.shop-products__display__options {
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+
+  img {
+    width: 16px;
+  }
+}
+
+.sorting__select {
+  background: transparent;
+  color: $color-dark-green;
+  border: none;
+  outline: none;
+
+  @include font-small-medium();
+  cursor: pointer;
+}
+
+.shop-products__pagination {
+  margin: 42px 0px 90px;
+}
+
+.select__label {
+  @include font-small-medium();
+  color: $color-dark-grey;
+}
+
+.shop__price__ranges {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  color: #939393;
+}
+
+@media screen and(max-width:1024px) {
+  .container__shop {
+    flex-direction: column;
+  }
+
+  .shop {
+    &__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &__nav {
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      &__price input,
+      .shop__price__ranges {
+        max-width: 212px;
+      }
+    }
+
+    &-products {
+      padding: 0;
+
+      &__sorting {
+        padding: 0px 20px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width:768px) {
+  .shop {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .container__shop {
+    gap: 10px;
+  }
+}
+
+@media screen and(max-width:425px) {
+  .container__shop {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shop__nav {
+    grid-template-columns: 1fr;
+  }
+
+  .shop-products__sorting {
+    padding: 0px;
+  }
+
+  .pagination__page:nth-child(n + 3):nth-child(-n + 5) {
+    display: none;
+  }
+}

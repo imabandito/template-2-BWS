@@ -1,0 +1,66 @@
+.accordion {
+  border-top: 1px solid #e5e5e5;
+  padding: 16px 0px;
+
+  &:last-child {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  input[name="collapse"] {
+    display: none;
+  }
+
+  .content {
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+
+    @include font-lite-big();
+    color: $color-dark-grey;
+
+    transition: 0.5s;
+  }
+
+  label {
+    color: $color-dark-grey;
+    cursor: pointer;
+    @include font-lite-big();
+    font-size: 14px;
+
+    &:hover,
+    &:focus {
+      color: $color-darker-grey;
+    }
+  }
+
+  &__handle {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &__handle label:after {
+    content: "";
+    display: block;
+    background: url("../images/icons/arrow-down.svg");
+    position: absolute;
+    right: 0;
+    top: 25%;
+    width: 16px;
+    height: 10px;
+    transition: 0.4s;
+  }
+
+  input[name="collapse"]:checked ~ &__handle label:after {
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: 0.4s;
+  }
+
+  input[name="collapse"]:checked ~ .content {
+    padding: 16px 0px;
+    visibility: visible;
+    height: fit-content;
+  }
+}

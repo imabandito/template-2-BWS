@@ -1,0 +1,94 @@
+.contacts {
+  @include section-flex-settings();
+  padding: 100px 20px;
+  background: $color-dark-green;
+
+  &_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: $color-white;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__upheader {
+    @include font-medium-small();
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  &__header {
+    margin-top: 20px;
+    @include font-big-mid();
+  }
+
+  &__address {
+    @include font-medium-small();
+    opacity: 0.7;
+  }
+
+  &__form {
+    width: 100%;
+    max-width: 528px;
+    & input,
+    textarea {
+      width: 100%;
+      display: block;
+      padding: 15px;
+      margin-top: 14px;
+      resize: none;
+
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      outline: none;
+
+      font-family: inherit;
+      color: $color-white;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+
+    #message {
+      height: 132px;
+    }
+  }
+
+  &__submit {
+    height: 50px;
+    width: 224px;
+    margin-top: 34px;
+
+    background: $color-white;
+    border: none;
+
+    @include font-bold-small();
+    color: $color-dark-green;
+    transition: 0.4s all;
+
+    &:hover {
+      background: $color-dark-green;
+      border: 1px solid $color-white;
+      color: $color-white;
+    }
+  }
+}
+
+@media screen and(max-width:1024px) {
+  .contacts {
+    &_container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__address {
+      margin: 20px 0px;
+    }
+  }
+}

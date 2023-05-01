@@ -1,0 +1,102 @@
+.container_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  padding: 18px;
+
+  &__navigation {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 34px;
+    gap: 8px;
+
+    cursor: pointer;
+    transition: 0.4s;
+
+    & > span {
+      position: relative;
+      border: 1px solid #ffffff;
+      border-radius: 90px;
+      transition: 0.4s;
+    }
+
+    &:hover > span {
+      border-color: $color-darker-grey;
+    }
+  }
+
+  &__logo {
+    @include font-big();
+    color: $color-white;
+    transition: 0.4s;
+
+    &:hover {
+      color: $color-darker-grey;
+    }
+  }
+
+  &__cart {
+    cursor: pointer;
+  }
+
+  &__cart2 {
+    cursor: pointer;
+    background-image: url("../../images/header/cart.svg");
+    background-repeat: no-repeat;
+    height: 29px;
+    width: 29px;
+    transition: 0.4s;
+
+    &:hover {
+      background-image: none;
+      background-color: $color-darker-grey;
+      -webkit-mask-image: url("../../images/header/cart.svg");
+      mask-image: url("../../images/header/cart.svg");
+    }
+  }
+
+  &__navigation_dark > span {
+    border-color: $color-dark-grey;
+  }
+
+  &__navigation_dark:hover span {
+    border-color: $color-light-grey;
+  }
+
+  &__logo_dark {
+    color: $color-dark-grey;
+    &:hover {
+      color: $color-light-grey;
+    }
+  }
+
+  &__cart:hover {
+    & > path {
+      fill: $color-darker-grey;
+    }
+  }
+}
+
+.header_white {
+  background: $color-header;
+  top: 0;
+
+  .header__cart:hover {
+    & > path {
+      fill: $color-light-grey;
+    }
+  }
+}

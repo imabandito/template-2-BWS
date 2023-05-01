@@ -1,0 +1,100 @@
+@mixin font-big {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 39px;
+  letter-spacing: -2.5px;
+}
+
+@mixin font-big-smaller {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: -2.5px;
+}
+
+@mixin font-big-mid {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 51px;
+  letter-spacing: 1.5px;
+}
+
+@mixin font-medium {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin font-enormous {
+  font-weight: 400;
+  font-size: 110px;
+  line-height: 126px;
+  letter-spacing: -2.5px;
+}
+
+@mixin font-bold-small {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@mixin font-bold-big {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.6px;
+}
+
+@mixin font-medium-small {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+}
+
+@mixin font-medium-mid {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@mixin font-small {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+@mixin font-small-medium {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1.5px;
+}
+
+@mixin font-small-big {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+@mixin font-lite-big {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+
+@mixin section-flex-settings {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin font-big-title {
+  font-weight: 400;
+  font-size: 46px;
+  line-height: 46px;
+  letter-spacing: -0.8px;
+}

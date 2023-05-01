@@ -1,0 +1,21 @@
+@import "./layout/reset";
+
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
+
+@import "./layout/grid";
+
+@import "./components/header";
+@import "./components/hero";
+@import "./components/materials";
+@import "./components/catalogs";
+@import "./components/dealer";
+@import "./components/product";
+@import "./components/trending";
+@import "./components/about";
+@import "./components/reviews";
+@import "./components/contacts";
+@import "./components/footer";
+
+@import "./components/shop";
+@import "./components/pagination";

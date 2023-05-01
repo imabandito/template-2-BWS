@@ -1,0 +1,49 @@
+.reviews {
+  @include section-flex-settings();
+  background: url("../images/reviews/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 100px 20px;
+
+  &__review {
+    max-width: 560px;
+    padding: 36px;
+    background: $color-dark-grey;
+  }
+
+  &__text {
+    @include font-small-big();
+    letter-spacing: -0.01em;
+    color: $color-white;
+  }
+
+  &__name {
+    margin-top: 20px;
+    @include font-bold-small();
+    color: $color-dark-green;
+  }
+
+  &__position {
+    @include font-medium-small();
+    color: $color-dark-green;
+  }
+
+  &__controls {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  &__control {
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    &:hover {
+      svg > path {
+        stroke: $color-white;
+      }
+    }
+  }
+}

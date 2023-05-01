@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  &__list {
+    margin: 0px 32px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__page {
+    @include font-small-medium();
+    letter-spacing: -0.2px;
+    color: rgba(147, 147, 147, 0.5);
+
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      color: $color-darker-grey;
+    }
+  }
+
+  &__back,
+  &__forward {
+    height: 36px;
+    width: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(147, 147, 147, 0.5);
+
+    transition: 0.4s;
+    cursor: pointer;
+
+    &:hover {
+      background: $color-lighter-grey;
+    }
+  }
+
+  .page_active {
+    color: $color-dark-green;
+  }
+}

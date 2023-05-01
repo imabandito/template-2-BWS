@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Sircular";
+  src: url("../../fonts/circular-std-font-family/CircularStd-Medium.ttf")
+      format("ttf"),
+    url("../../fonts/circular-std-font-family/CircularStd-Book.ttf")
+      format("ttf");
+}
+
+body {
+  font-family: "Sircular", sans-serif;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1312px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+svg > path {
+  transition: 0.4s;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
